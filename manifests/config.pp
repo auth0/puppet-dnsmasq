@@ -7,7 +7,7 @@ class dnsmasq::config {
   file {
     $dnsmasq::params::config_file:
       mode   => '0644',
-      source => 'puppet:///modules/dnsmasq/dnsmasq.conf';
+      content => template('dnsmasq/dnsmasq.conf.erb')
 
 #    $dnsmasq::params::config_dir:
 #      ensure  => 'directory',
